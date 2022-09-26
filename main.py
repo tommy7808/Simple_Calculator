@@ -85,29 +85,25 @@ class Calculator:
         self.button16.grid(row=5, column=3)
 
     def button_click(self, number):
+        # Get entry field string
         current = self.entry.get()
+
+        # Clear entry field and then display number
         self.entry.delete(0, END)
         self.entry.insert(0, str(current) + str(number))
 
-        # Checks if a number is pressed during an operation
-        if self.but_press == True:
-            self.entry.delete(0, END)
-            self.entry.insert(0, str(number))
-            self.but_press = False
-
     def clear(self):
         self.entry.delete(0, END)
-        # reset values
-        self.addition = 0
-        self.minus = 0
-        self.multiply = 0
-        self.divide = 0
 
     def back(self):
+        # Get entry field string
         current = self.entry.get()
-        display = current[0:-1]
-        self.entry.delete(0, END)
-        self.entry.insert(0, display)
+
+        # Check if there is anything in entry field
+        if current:
+            display = current[0:-1]
+            self.entry.delete(0, END)
+            self.entry.insert(0, display)
 
     def equal(self):
         pass
