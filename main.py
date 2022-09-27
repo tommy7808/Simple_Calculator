@@ -105,9 +105,6 @@ class Calculator:
             self.entry.delete(0, END)
             self.entry.insert(0, display)
 
-    def equal(self):
-        pass
-
 
 root = Tk()
 window = Calculator(root)
